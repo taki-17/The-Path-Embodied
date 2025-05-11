@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Path Embodied</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="Favicon/favicon.ico" type="Favicon/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+	<hr class="solid">
+  <header>
+    <h1>୨ৎ  Welcome to The Path Embodied ୨ৎ </h1>
+    <p>This website explores to reveal what our hearts have felt—our true character. It is a way to highlight how our thoughts and soul shaoe what we feel: love, joy, sadness, fear, kindness, and more. We chose Hirono as it embodies the essence of growth and personifies profound human emotions.</p>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+	<h2>Choose and shake the box to discover hints about the character waiting within!</h2>
+  <div class="box-container">
+    <div class="blind-box" onclick="activateBox(this)" data-correct="The Dreaming" data-link="About me-Sophia.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Parasite" data-link="about me-aisle.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Staring" data-link="about me-denise.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Rose" data-link="about me-venisse.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Birdy" data-link="about me-maxine.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Nowhere Safe" data-link="about me-charmae.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+	<div class="blind-box" onclick="activateBox(this)" data-correct="The Comfortably Numb" data-link="about me-sabrina.html">
+      <img src="images/hirono_box.png" alt="Blind Box" class="box-image" />
+      <div class="box-buttons">
+        <button class="shake-btn">✨ Shake Box</button>
+        <button class="interested-btn" style="display: none;">Interested</button>
+        <div class="hint-box"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const allCharacters = [
+    "The Dreaming",
+    "The Rose",
+    "The Comfortably Numb",
+    "The Parasite",
+    "The Staring",
+    "The Birdy",
+    "The Nowhere Safe",
+  ];
+
+  const shakeCounts = new Map();
+
+  function activateBox(box) {
+    if (!box.classList.contains('active')) {
+      box.classList.add('active');
+    }
+  }
+
+  document.querySelectorAll('.shake-btn').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const box = event.target.closest('.blind-box');
+      const correctCharacter = box.dataset.correct;
+      const hintDiv = box.querySelector('.hint-box');
+
+      const filteredHints = allCharacters
+        .filter(char => char !== correctCharacter)
+        .map(char => `The box is NOT: ${char}`);
+
+      const randomHint = filteredHints[Math.floor(Math.random() * filteredHints.length)];
+      hintDiv.textContent = randomHint;
+
+      box.classList.add('shake');
+      setTimeout(() => {
+        box.classList.remove('shake');
+      }, 500);
+
+      const prevCount = shakeCounts.get(box) || 0;
+      const newCount = prevCount + 1;
+      shakeCounts.set(box, newCount);
+
+      if (newCount >= 3) {
+        const interestedButton = box.querySelector('.interested-btn');
+        if (interestedButton) {
+          interestedButton.style.display = 'inline-block';
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.interested-btn').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const box = event.target.closest('.blind-box');
+      box.classList.add('revealed');
+
+      const link = box.dataset.link;
+      if (link) {
+        // Redirect immediately when the button is clicked
+        window.location.href = link;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+

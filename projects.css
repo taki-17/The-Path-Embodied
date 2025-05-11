@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+body {
+  font-family: 'Tagesschrift', sans-serif;
+  background: linear-gradient(to right, #D5C7A3, #BDB395);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+.projects {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.projects header h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.projects header p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.members-projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.member-projects {
+  background-color: #DFD0B8;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden; 
+}
+
+.member-projects h3 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #DFD0B8;
+  color: #444;
+}
+
+td {
+  background-color: #DFD0B8;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+td img {
+  max-width: 15rem;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+}
+
+
+@media (max-width: 768px) {
+  .members-projects-container {
+    padding: 0 20px;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  .member-projects {
+    padding: 15px;
+}
+
+

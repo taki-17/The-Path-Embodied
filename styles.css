@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+body {
+  background: linear-gradient(to right, #D5C7A3, #BDB395);
+  font-family: 'Tagesschrift', sans-serif;
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+nav {
+  background-color: linear-gradient(to right, #D5C7A3, #BDB395);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+hr.solid {
+  border: 2px solid #555;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: 'Tagesschrift', sans-serif;
+}
+
+nav a:hover {
+  color: #ff69b4;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-family: 'Tagesschrift', sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+h2 {
+	font-family: 'Tagesschrift', sans-serif;
+	font-size: 2rem;
+	color: #444;
+}
+
+p {
+	font-family: 'Tagesschrift', sans-serif;
+  font-size: 1.7rem;
+  color: #666;
+}
+
+.box-container {
+  display: block;
+  margin: auto;
+  padding: 0;
+}
+
+.blind-box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin: 10px;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+}
+
+.box-image {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.blind-box.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.blind-box:hover {
+  transform: scale(1.05);
+}
+
+.box-buttons {
+  display: none;
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blind-box.active .box-buttons {
+  display: flex;
+}
+
+button {
+  background-color: #C1CFA1;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #A5B68D;
+}
+
+.hint-box {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.reveal-img {
+  display: none;
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.blind-box.revealed .reveal-img {
+  display: block;
+}
+
+
+
+

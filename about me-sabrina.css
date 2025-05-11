@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+body {
+  font-family: 'Tagesschrift', sans-serif;
+  background: linear-gradient(to right, #D5C7A3, #BDB395);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fdf8f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.profile-photo {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.comfortablynumb-hirono {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.comfortalynumb-hirono h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.comfortablynumb-photo {
+  margin: 20px auto;
+}
+
+.hirono-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.bio {
+  flex: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+.fun-facts span {
+  font-weight: bold;
+  color: #8a5c4c;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+}
